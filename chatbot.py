@@ -1,6 +1,6 @@
 import paho.mqtt.publish as publish
 import telebot
-bot = telebot.TeleBot(token)
+bot = telebot.TeleBot("token")
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
         bot.reply_to(message, "Holi, bienvenido al chatbot mas kulz <3")
@@ -39,7 +39,7 @@ def echo_all(message):
         elif(message.text == 'ApagarSalida4'):
                 publish.single('/salida4','0',hostname='localhost')
                 print("Salida 4 apagada.") 
-                bot.reply_to(message, "Salida 4 apagada."
+                bot.reply_to(message, "Salida 4 apagada.")
         elif(message.text == 'ApagarTodo'):
                 publish.single('/salida4','0',hostname='localhost')
                 publish.single('/salida1','0',hostname='localhost')
